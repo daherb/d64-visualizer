@@ -20,6 +20,7 @@ import Data.Colour.RGBSpace.HSV
 import Data.Word
 import GHC.Float
 
+-- | Creates a color map with 256 values 
 colorMap :: [Colour Double]
 colorMap =
   black:[sRGB24 r g b | i <- [0..255], let hsvColor = hsv (fromIntegral $ i+45 `mod` 360) 1 1 :: RGB Double, let RGB r g b = fmap (round . (255*)) hsvColor :: RGB Word8]
@@ -42,9 +43,11 @@ readTrack track handle
   | 25 <= track && track <= 30 = BS.hGet handle $ 18 * 256
   | 31 <= track && track <= 40 = BS.hGet handle $ 17 * 256
 
+-- | Reads a disk image into a list of tracks, i.e. binary strings
 readDisk :: Handle -> IO [BS.ByteString]
 readDisk handle = sequence [readTrack track handle | track <- [1..40]]
 
+-- | Print the disk content as a list of bytes, i.e. decimal values between 0 and 255
 showDisk :: [BS.ByteString] -> IO ()
 showDisk bss =
   putStrLn $ unlines $ L.map show [BS.unpack bs | bs <- bss]
