@@ -84,8 +84,7 @@ drawDisk tracks =
 
 main =
   let
---    fileName = "ddt.d64"
-    fileName = "Star_Wars.d64"
+    fileName = "ddt.d64"
   in
     mainWith =<<
       withFile fileName ReadMode
