@@ -73,6 +73,7 @@ drawDisk tracks =
   in
     drawColorMap === ((circle 810 # lw none # fc grey) `beneath` (foldl atop  (circle 5 # lw none # fc white <> circle 95 # lw none # fc grey) $ concat [drawTrack radius trackWidth trackId trackData | (trackId,trackData) <- diskData]))
 
+-- | Some examples how to directly render to svg or png without using mainWith
 -- main' =
 --   renderSVG "ddt.svg" absolute =<<
 --     withFile "ddt.d64" ReadMode
