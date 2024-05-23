@@ -9,8 +9,8 @@ import qualified Data.List as L
 import Diagrams.Prelude
 import Diagrams.Backend.SVG hiding (B)
 import Diagrams.Backend.Cairo hiding (B)
-import Diagrams.Backend.SVG.CmdLine
---import Diagrams.Backend.Cairo.CmdLine
+--import Diagrams.Backend.SVG.CmdLine
+import Diagrams.Backend.Cairo.CmdLine
 import Diagrams.TwoD.Arc
 import Diagrams.Angle
 
