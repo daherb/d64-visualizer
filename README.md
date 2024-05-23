@@ -1,6 +1,6 @@
 # D64 Visualizer
 
-Inspired by (https://chaos.social/@c64_disks@botsin.space)[C64DiskBot]
+Inspired by [C64DiskBot](https://chaos.social/@c64_disks@botsin.space)
 (Source https://github.com/SuperIlu/C64DiskBot/tree/main)
 
 Run using stack:
